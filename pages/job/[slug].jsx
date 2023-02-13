@@ -1,6 +1,4 @@
-import { getJobs } from '../../datalayer';
-import { getJobBySlug } from '../../datalayer/contentful/job';
-import { getJobsSlugs } from '../../datalayer/contentful/job';
+import { getJobsSlugs, getJobBySlug } from '../../datalayer';
 import JobDetails from '../../components/data/details/JobDetails';
 import LoadingSpinner from '../../components/ui/LoadingSpinner';
 

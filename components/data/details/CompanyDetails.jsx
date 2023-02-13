@@ -15,7 +15,7 @@ const CompanyDetails = ({ company, companyJobs }) => {
   console.log({ company, companyJobs });
   const jobsGroupedByCategories = groupArrayOfObjects(
     companyJobs,
-    'jobCategory'
+    'jobCategary'
   );
   console.log('jobsGroupedByCategories = ', jobsGroupedByCategories);
   return (
@@ -100,12 +100,12 @@ const CompanyDetails = ({ company, companyJobs }) => {
             {/* Job lists */}
             <div className='space-y-6'>
               {jobsGroupedByCategories &&
-                Object.keys(jobsGroupedByCategories).map((jobCategory) => {
-                  const jobs = jobsGroupedByCategories[jobCategory];
+                Object.keys(jobsGroupedByCategories).map((jobCategary) => {
+                  const jobs = jobsGroupedByCategories[jobCategary];
                   return (
-                    <div key={jobCategory}>
+                    <div key={jobCategary}>
                       <h4 className='text-slate-800 font-medium mb-4'>
-                        {jobCategory}
+                        {jobCategary}
                       </h4>
                       {/* Job category list */}
                       <JobsList jobs={jobs} />

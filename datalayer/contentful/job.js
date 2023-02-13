@@ -34,3 +34,18 @@ export const getJobsSlugs = async () => {
     const job = found.items[0];
     return jobReducer(job);
   };
+
+  export const getJobsByCompanyId = async ({ id }) => {
+    const res = await client.getEntries({
+      content_type: 'job',
+      'fields.company.sys.id': id,
+      include: 2,
+    });
+  
+    const rawJobs = res.items;
+    const jobs = rawJobs.map((rawJob) => {
+      return jobReducer(rawJob);
+    });
+    return jobs;
+  };
+  
